@@ -9,9 +9,10 @@
 
 #define HEAD_Y 10
 
+/*----------------------------Prototype fruitz.c--------------------------*/
 int random_pos(void);
 void spawn_fruitz(int map[][TAILLE_LIGNE]);
-
+/*------------------------------------------------------------------------*/
 
 
 

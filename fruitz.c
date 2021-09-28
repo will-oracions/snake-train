@@ -12,6 +12,8 @@ int random_pos(void)
         
 }
 
+/*insert fruit in the map at a empty positon*/
+
 void spawn_fruitz(int map[][TAILLE_LIGNE])
 {
     int coord_x;
