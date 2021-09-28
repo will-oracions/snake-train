@@ -1,10 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #define TAILLE_LIGNE 20
 #define TAILLE_COLONNE 20
+
 #define HEAD_X 10
 #define HEAD_Y 10
 
+/*-----------------------------*/
+typedef enum
+{
+	false,
+	true
+}Bool;
+
+/*-----------------------------*/
+
+/*-----------------------------*/
+typedef struct Snake_Info
+{
+	int x;
+	int y;
+
+	struct Snake_Info *next;
+
+}Snake_Info, *Snake;
+/*-----------------------------*/
+
+/*-----------------------------*/
+
+typedef struct Fruitz
+{
+	int x;
+	int y;
+} 
+
+/*-----------------------------*/
+
+/* prototype -----> snake.body */
+/*-----------------------------*/
+
+Snake new_snake(void);
+Bool verif_snake_info_empty(Snake s);
+Snake init_snake_head(Snake s);
 
 
-
+/*-----------------------------*/
