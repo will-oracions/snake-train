@@ -20,6 +20,8 @@ void spawn_fruitz(int map[][TAILLE_LIGNE])
     int coord_y;
     coord_x = random_pos();
     coord_y = random_pos();
+
+
     if (map[coord_x][coord_y] == 0)
     {
         map[coord_x][coord_y] = 6;
@@ -33,6 +35,7 @@ void spawn_fruitz(int map[][TAILLE_LIGNE])
         }
         map[coord_x][coord_y] = 6;
     }
-
+    Fruitz.x = coord_x;
+    Fruitz.y = coord_y;
 }
 

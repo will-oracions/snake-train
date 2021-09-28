@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 #define TAILLE_LIGNE 20
 
 #define TAILLE_COLONNE 20
@@ -15,6 +16,7 @@ void spawn_fruitz(int map[][TAILLE_LIGNE]);
 /*------------------------------------------------------------------------*/
 
 
-
+void init_map(int map[][TAILLE_LIGNE]);
+void display_map(int map[][TAILLE_LIGNE]);
 
 
