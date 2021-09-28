@@ -2,9 +2,11 @@
 #include <stdlib.h>
 
 #define TAILLE_LIGNE 20
+
 #define TAILLE_COLONNE 20
 
 #define HEAD_X 10
+
 #define HEAD_Y 10
 
 /*-----------------------------*/
@@ -15,6 +17,7 @@ typedef enum
 }Bool;
 
 /*-----------------------------*/
+
 
 /*-----------------------------*/
 typedef struct Snake_Info
@@ -27,8 +30,8 @@ typedef struct Snake_Info
 }Snake_Info, *Snake;
 /*-----------------------------*/
 
-/*-----------------------------*/
 
+/*-----------------------------*/
 typedef struct Fruitz
 {
 	int x;
@@ -37,12 +40,19 @@ typedef struct Fruitz
 
 /*-----------------------------*/
 
-/* prototype -----> snake.body */
-/*-----------------------------*/
+/*----------------------------Prototype fruitz.c--------------------------*/
+int random_pos(void);
+void spawn_fruitz(int map[][TAILLE_LIGNE]);
+/*------------------------------------------------------------------------*/
 
+
+
+/* prototype -----> snake.body */
+
+/*------------------------------------------------------------------------*/
 Snake new_snake(void);
 Bool verif_snake_info_empty(Snake s);
 Snake init_snake_head(Snake s);
 
+/*------------------------------------------------------------------------*/
 
-/*-----------------------------*/
