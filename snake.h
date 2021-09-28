@@ -28,7 +28,7 @@ typedef struct Snake_Info
 
 	struct Snake_Info *next;
 
-}Snake_Info, *Snake;
+}Snake_Info,*Snake;
 /*-----------------------------*/
 
 
@@ -43,7 +43,7 @@ typedef struct Fruitz
 
 /*----------------------------Prototype fruitz.c--------------------------*/
 int random_pos(void);
-void spawn_fruitz(int map[][TAILLE_LIGNE]);
+Fruitz spawn_fruitz(Fruitz fruit, int map[][TAILLE_LIGNE]);
 /*------------------------------------------------------------------------*/
 
 

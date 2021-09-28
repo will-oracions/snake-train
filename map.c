@@ -32,6 +32,7 @@ void init_map(int map[][TAILLE_LIGNE])
             j++;
         }
         i++;
+    }
 }
 
 /*Display map all element */
