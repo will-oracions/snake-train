@@ -5,37 +5,33 @@
 
 int random_pos(void)
 {
-    srand(time(NULL));
-    int rand;
-    rand = 1 + rand()*(TAILLE_LIGNE-1)/RAND_MAX;
-    return rand;
+    int random;
+    random = 1 + rand() % (19+1-1); 
+    return random;
         
 }
 
-/*insert fruit in the map at a empty positon*/
+/*insert fruit in the map at an empty positon*/
 
-void spawn_fruitz(int map[][TAILLE_LIGNE])
+Fruitz spawn_fruitz(Fruitz fruit, int map[][TAILLE_LIGNE])
 {
-    int coord_x;
-    int coord_y;
-    coord_x = random_pos();
-    coord_y = random_pos();
+    fruit.x = random_pos();
+    fruit.y = random_pos();
 
 
-    if (map[coord_x][coord_y] == 0)
+    if (map[fruit.x][fruit.y] == 0)
     {
-        map[coord_x][coord_y] = 6;
+        map[fruit.x][fruit.y] = 6;
     }
     else 
     {
-        while (map[coord_x][coord_y]!=0)
+        while (map[fruit.x][fruit.y]!=0)
         {
-            coord_x = random_pos();
-            coord_y = random_pos();
+            fruit.x = random_pos();
+            fruit.y = random_pos();
         }
-        map[coord_x][coord_y] = 6;
+        map[fruit.x][fruit.y] = 6;
     }
-    Fruitz.x = coord_x;
-    Fruitz.y = coord_y;
+    return fruit;
 }
 
