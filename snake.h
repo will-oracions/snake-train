@@ -11,16 +11,18 @@
 #define HEAD_Y 10
 
 /*-----------------------------*/
+/*
 typedef enum
 {
 	false,
 	true
 }Bool;
-
+*/
 /*-----------------------------*/
 
 
 /*-----------------------------*/
+/*
 typedef struct Snake_Info
 {
 	int x;
@@ -29,15 +31,18 @@ typedef struct Snake_Info
 	struct Snake_Info *next;
 
 }Snake_Info,*Snake;
+*/
 /*-----------------------------*/
 
 
 /*-----------------------------*/
-typedef struct Fruitz
+typedef struct Fruits Fruitz;
+struct Fruits
 {
 	int x;
 	int y;
-} 
+};
+
 
 /*-----------------------------*/
 
@@ -53,9 +58,10 @@ void display_map(int map[][TAILLE_LIGNE]);
 /*------------------------------------------------------------------------*/
 
 /*---------------------------Prototype snake-body.c-----------------------*/
+/*
 Snake new_snake(void);
 Bool verif_snake_info_empty(Snake s);
 Snake init_snake_head(Snake s);
-
+*/
 /*------------------------------------------------------------------------*/
 
