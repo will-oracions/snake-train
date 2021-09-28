@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 #define TAILLE_LIGNE 20
 
 #define TAILLE_COLONNE 20
@@ -46,10 +47,12 @@ void spawn_fruitz(int map[][TAILLE_LIGNE]);
 /*------------------------------------------------------------------------*/
 
 
-
-/* prototype -----> snake.body */
-
+/*--------------------------Prototype map.c-------------------------------*/
+void init_map(int map[][TAILLE_LIGNE]);
+void display_map(int map[][TAILLE_LIGNE]);
 /*------------------------------------------------------------------------*/
+
+/*---------------------------Prototype snake-body.c-----------------------*/
 Snake new_snake(void);
 Bool verif_snake_info_empty(Snake s);
 Snake init_snake_head(Snake s);
