@@ -54,6 +54,8 @@ Fruitz spawn_fruitz(Fruitz fruit, int map[][TAILLE_LIGNE]);
 /*--------------------------Prototype map.c-------------------------------*/
 void init_map(int map[][TAILLE_LIGNE]);
 void display_map(int map[][TAILLE_LIGNE]);
+int check_snake_pos(Snake snake,int map[][TAILLE_COLONNE]);
+
 /*------------------------------------------------------------------------*/
 
 /*---------------------------Prototype snake-body.c-----------------------*/
