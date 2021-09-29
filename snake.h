@@ -59,9 +59,9 @@ void display_map(int map[][TAILLE_LIGNE]);
 
 /*---------------------------Prototype snake-body.c-----------------------*/
     Snake new_snake(void);
-	Bool verif_snake_info_empty(Snake s);
+    Bool verif_snake_info_empty(Snake s);
     Snake_M init_snake_mooves(Snake_M m);	
-	Snake init_snake(Snake s);
-	Snake snake_grown_up(Snake s, Snake_M m, Fruitz *fruit);
+    Snake init_snake(Snake s);
+    Snake snake_grown_up(Snake s, Snake_M m, Fruitz *fruit);
 /*------------------------------------------------------------------------*/
 
