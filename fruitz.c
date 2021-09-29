@@ -15,22 +15,23 @@ int random_pos(void)
 
 Fruitz spawn_fruitz(Fruitz fruit, int map[][TAILLE_LIGNE])
 {
-    fruit.x = random_pos();
-    fruit.y = random_pos();
+    fruit->x = random_pos();
+    fruit->y = random_pos();
 
 
-    if (map[fruit.x][fruit.y] == 0)
+    if (map[fruit->x][fruit->y] == 0)
     {
-        map[fruit.x][fruit.y] = 6;
+        map[fruit->x][fruit->y] = 6;
+        
     }
     else 
     {
-        while (map[fruit.x][fruit.y]!=0)
+        while (map[fruit->x][fruit->y]!=0)
         {
-            fruit.x = random_pos();
-            fruit.y = random_pos();
+            fruit->x = random_pos();
+            fruit->y = random_pos();
         }
-        map[fruit.x][fruit.y] = 6;
+        map[fruit->x][fruit->y] = 6;
     }
     return fruit;
 }

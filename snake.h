@@ -36,12 +36,11 @@ typedef struct Snake_Info
 
 
 /*-----------------------------*/
-typedef struct Fruits Fruitz;
-struct Fruits
+typedef struct Fruitz
 {
 	int x;
 	int y;
-};
+}*Fruitz;
 
 
 /*-----------------------------*/
