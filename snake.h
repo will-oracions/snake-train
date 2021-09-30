@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SNAKE_SIZE 3
 
 #define TAILLE_LIGNE 20
 
@@ -10,12 +11,12 @@
 
 #define HEAD_Y 10
 
-/*-----------------------------*/
+    /*-----------------------------*/
 
-typedef enum
-{
-	false,
-	true
+    typedef enum
+    {
+        false,
+        true
 }Bool;
 
 /*-----------------------------*/
@@ -36,33 +37,38 @@ typedef struct Snake_Info
 
 
 /*-----------------------------*/
-typedef struct Fruitz
+typedef struct Fruits Fruitz;
+struct Fruits
 {
 	int x;
 	int y;
-}*Fruitz;
+}*Frt;
 
 
 /*-----------------------------*/
 
 /*----------------------------Prototype fruitz.c--------------------------*/
 int random_pos(void);
-Fruitz spawn_fruitz(Fruitz fruit, int map[][TAILLE_LIGNE]);
+Fruitz spawn_fruitz(Fruitz fruit, int map[][TAILLE_COLONNE]);
 /*------------------------------------------------------------------------*/
 
 
 /*--------------------------Prototype map.c-------------------------------*/
-void init_map(int map[][TAILLE_LIGNE]);
-void display_map(int map[][TAILLE_LIGNE]);
-int check_snake_pos(Snake snake,int map[][TAILLE_COLONNE]);
+void init_map(int map[][TAILLE_COLONNE]);
+void display_map(int map[][TAILLE_COLONNE]);
+Bool check_snake_pos(Snake snake, int map[][TAILLE_COLONNE]);
 
 /*------------------------------------------------------------------------*/
 
 /*---------------------------Prototype snake-body.c-----------------------*/
-    Snake new_snake(void);
-    Bool verif_snake_info_empty(Snake s);
-    Snake_M init_snake_mooves(Snake_M m);	
-    Snake init_snake(Snake s);
-    Snake snake_grown_up(Snake s, Snake_M m, Fruitz *fruit);
+
+void insert_snake(int map[][TAILLE_COLONNE], Snake snake_element);
+Snake new_snake(void);
+Snake setup_head(void);
+Snake setup_body(Snake snake_element);
+void check_snake(Snake snak);
+
+
+
 /*------------------------------------------------------------------------*/
 

@@ -2,13 +2,13 @@
 
 /* Death of Snake */
 
-int check_snake_pos(Snake snake,int map[][TAILLE_COLONNE])
+Bool check_snake_pos(Snake snake, int map[][TAILLE_COLONNE])
 {
-    if (map[snake->x][snake->y] != 0 && map[snake->x][snake->y] != 6)
+    if (map[snake->y][snake->x] != 0 && map[snake->y][snake->x] != 6)
     {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
         
 }
 
@@ -71,3 +71,19 @@ void display_map(int map[][TAILLE_LIGNE])
     }
 }
 
+/* Initialise snake in the map */
+
+void insert_snake(int map[][TAILLE_COLONNE], Snake snake_element)
+{
+    
+    while (snake_element != NULL)
+    {
+        printf("yes\n");
+        if (map[snake_element->y][snake_element->x] == 0)
+        {
+            map[snake_element->y][snake_element->x] = 3;
+        }
+        snake_element = snake_element->next;
+        
+    }
+}
