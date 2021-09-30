@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #ifndef __SNAKE__H__
 #define __SNAKE__H__
@@ -20,14 +21,14 @@
 	
 	/*-----------------------------*/
 
-	typedef struct Snake_Head_Info
+	typedef struct Snake_Mooves
 	{
-		Bool up;
-		Bool dawn;
-		Bool right;
-		Bool left;
+		Bool up; // = 1
+		Bool dawn;// = 2
+		Bool right;// = 3
+		Bool left;// = 4
 
-	}Snake_Head_Info, *Snake_M;
+	}Snake_Mooves, *Snake_M;
 	
 	
 	/*-----------------------------*/
@@ -41,19 +42,18 @@
 	}Snake_Info, *Snake;
 	/*-----------------------------*/
 	
-	
 	/*-----------------------------*/
 	typedef struct Fruitz
 	{
 		int x;
 		int y;
-	}Fruitz; 
+	}Fruitz, *Frt; 
 	
 	/*-----------------------------*/
 	
 	/*----------------------------Prototype fruitz.c--------------------------*/
 	int random_pos(void);
-	Fruitz spawn_fruitz(Fruitz fruit, int map[][TAILLE_LIGNE]);
+	Frt spawn_fruitz(Frt fruit, int map[][TAILLE_LIGNE]);
 	/*------------------------------------------------------------------------*/
 	
 	
@@ -67,7 +67,13 @@
 	Bool verif_snake_info_empty(Snake s);
         Snake_M init_snake_mooves(Snake_M m);	
 	Snake init_snake(Snake s);
-	Snake snake_grown_up(Snake s, Snake_M m, Fruitz *fruit);
+        
+	int snake_lenght(Snake s);
+        Snake moove_head(Snake_M m, Snake s);  
+        Snake chase_head(Snake s);
+
+	Snake snake_grown_up(Snake s, Frt fruit);
+	
 	
 	/*------------------------------------------------------------------------*/
 #endif

@@ -45,9 +45,91 @@ Snake init_snake(Snake s)
 	
 /*------------------------------------------------------------------------*/
 
+Snake_M init_snake_mooves(Snake_M m)	
+{
+	m->up = false;
+	m->dawn = false;
+	m->right = false;
+	m->left = false;
+
+	return m;
+}
+	
+
+/*------------------------------------------------------------------------*/
+ Snake moove_head(Snake_M m, Snake s)
+ {
+	 if(m->right == true)
+	 {
+		(s->x)++;
+	 }
+	 if(m->left == true)
+	 {
+		 (s->x)--;
+	 }
+	 if(m->up == true)
+	 {
+		 (s->y)--;
+	 }
+	 if(m->dawn == true)
+	 {
+		 (s->y)++;
+	 }
+
+	 return s;
+ }
+ 
+
+int snake_lenght(Snake s)
+{
+	int len = 0;
+
+	while( s->next->next != NULL)
+	{
+		len++;
+		s = s->next;
+	}
+
+	return len;
+}
+
+Snake chase_head(Snake s)
+{
+	Snake_Info *tmp;
+	tmp = s;
+
+	int cmpt = 0;
+	int len = snake_lenght(s);
+
+	int i = len ;
+        int icmpt = 0;
+
+	while(cmpt <  len )
+		
+	{
+		while(i > 0)
+		{
+			tmp = tmp->next;
+			i--;
+		}
+		tmp->next->x = tmp->x;
+		tmp->next->y = tmp->y;
+
+		icmpt++;
+		i = len - icmpt;
+		
+		tmp =s ;
+		cmpt++;
+
+	}
+	tmp->next->x = tmp->x;
+	tmp->next->y = tmp->y;
+
+	return s;	
+}
 /*------------------------------------------------------------------------*/
 
-Snake snake_grown_up(Snake s, Snake_M m, Fruitz *fruit)
+Snake snake_grown_up(Snake s, Frt fruit)
 {
 	Snake_Info *tmp;
 	tmp = s;
@@ -55,73 +137,18 @@ Snake snake_grown_up(Snake s, Snake_M m, Fruitz *fruit)
 
 	if(s->x == fruit->x && s->y == fruit->y)
 	{
-		if(s->next == NULL)
-		{
-			if(m->up == true)
-			{
-				s->next->y = (s->y)--;
-			}
-			else if (m->dawn == true)
-			{
-				s->next->y = (s->y)++;
-			}
-			else
-			{
-				s->next->y = s->y;
-			}
-
-			if(m->right == true)
-			{
-				s->next->x = (s->x)--;
-			}
-
-			else if (m->left == true)
-			{
-				
-				s->next->x = (s->x)++;
-			}
-			
-			return s;
-			
-		}
-
-         	while(tmp->next->next != NULL)
+		Snake_Info *New_Body = malloc(sizeof(New_Body));
+		
+		while(tmp->next != NULL)
 		{
 			tmp = tmp->next;
 		}
-
-		if(tmp->next->x == (tmp->x)+1)
-		{
-			tmp->next->next->x = (tmp->next->x)+2;
-		}
-
-	       else if(tmp->next->x == (tmp->x)-1)
-		{
-			tmp->next->next->x = (tmp->next->x)-2;
-		}
-
-		else
-		{
-			tmp->next->next->x = tmp->x;
-		}
-
-
-		if(tmp->next->y == (tmp->y) - 1)
-		{
-			tmp->next->next->y = (tmp->next->y)-2;
-		}
-
-		else if(tmp->next->y == (tmp->y) + 1)
-		{
-			tmp->next->next->y = (tmp->next->y)+2;
-		}		
-
-		else
-		{
-			tmp->next->next->y = tmp->y;
-		}
+		New_Body->next = NULL;
+		tmp->next = New_Body;
 
 	}
+
+	s = chase_head(s); 
 
 	return s;
 
@@ -134,12 +161,4 @@ Snake snake_grown_up(Snake s, Snake_M m, Fruitz *fruit)
 
 /*------------------------------------------------------------------------*/
 
-Snake_M init_snake_mooves(Snake_M m)	
-{
-	m->up = false;
-	m->dawn = false;
-	m->right = false;
-	m->left = false;
 
-	return m;
-}
