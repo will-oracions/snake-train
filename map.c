@@ -78,7 +78,6 @@ void insert_snake(int map[][TAILLE_COLONNE], Snake snake_element)
     
     while (snake_element != NULL)
     {
-        printf("yes\n");
         if (map[snake_element->y][snake_element->x] == 0)
         {
             map[snake_element->y][snake_element->x] = 3;

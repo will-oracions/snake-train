@@ -1,11 +1,11 @@
 #include "snake.h"
-void insert_snake(int map[][TAILLE_COLONNE], Snake snake_element);
 
 
 
 int main(void)
 {
     int map[TAILLE_COLONNE][TAILLE_LIGNE] = {0};
+    srand(time(0));
     Bool over;
 
     Snake snak;
