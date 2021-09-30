@@ -1,8 +1,20 @@
 #include "snake.h"
 
+/* Death of Snake */
+
+int check_snake_pos(Snake snake,int map[][TAILLE_COLONNE])
+{
+    if (map[snake->x][snake->y] != 0 && map[snake->x][snake->y] != 6)
+    {
+        return 1;
+    }
+    return 0;
+        
+}
+
 /*Create Border*/
 
-void init_map(int map[][TAILLE_LIGNE])
+void init_map(int map[][TAILLE_COLONNE])
 {
     int i;
     int j;
@@ -46,10 +58,10 @@ void display_map(int map[][TAILLE_LIGNE])
     int j;
     i = 0;
     j = 0;
-    while (i < TAILLE_COLONNE)
+    while (i < TAILLE_LIGNE)
     {
         j = 0;
-        while (j < TAILLE_LIGNE)
+        while (j < TAILLE_COLONNE)
         {
             printf("%i", map[i][j]);
             j++;

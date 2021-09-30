@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 #ifndef __SNAKE__H__
 #define __SNAKE__H__
 
