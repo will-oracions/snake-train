@@ -182,12 +182,46 @@ void check_snake(Snake snak)
 	
 /*------------------------------------------------------------------------*/
 
+/*Free Memory Of All Element Of Snake List*/
+
 /*-----------------------------*/
+
+void free_memory(Snake s)
+{
+    Snake_Info *tmp;
+    while (s->next != NULL)
+    {
+        tmp = s;
+        s = s->next;
+        free(tmp);
+    }
+}
 
 /*-----------------------------*/
 
 /*------------------------------------------------------------------------*/
-	
+
+Snake_M check_move(Snake_M m)
+{
+    if (m->left == true)
+    {
+        m->right = false;
+    }
+    if (m->right == true)
+    {
+        m->left = false;
+    }
+    if (m->up == true)
+    {
+        m->dawn = false;
+    }
+    if (m->dawn == true)
+    {
+        m->up = false;
+    }
+}
+
+
 /*------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------*/
