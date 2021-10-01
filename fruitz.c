@@ -6,7 +6,7 @@
 int random_pos(void)
 {
     int random;
-    random = 1 + rand() % (19+1-1); 
+    random = 1 + rand() % (19); 
     return random;
         
 }
