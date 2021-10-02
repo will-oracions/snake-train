@@ -31,7 +31,7 @@ Snake setup_head(void)
 Snake_M init_snake_mooves(Snake_M m)	
 {
 	m->up = false;
-	m->dawn = false;
+	m->down = false;
 	m->right = false;
 	m->left = false;
 
@@ -54,7 +54,7 @@ Snake_M init_snake_mooves(Snake_M m)
 	 {
 		 (s->y)--;
 	 }
-	 if(m->dawn == true)
+	 if(m->down == true)
 	 {
 		 (s->y)++;
 	 }
@@ -164,6 +164,7 @@ Snake snake_chase_head_and_grown_up(Snake s, Fruitz fruit)
 
 	}
 
+
 	s = chase_head(s); 
 
 	return s;
@@ -183,6 +184,22 @@ void check_snake(Snake snak)
 
 
 /*------------------------------------------------------------------------*/
+
+void clear_snake(Snake s)
+{
+	Snake_Info *tmp;;
+
+	if(s != NULL)
+	{
+		tmp = s->next;
+		free(s);
+	}
+
+	return;
+}
+
+
+		
 	
 /*------------------------------------------------------------------------*/
 
